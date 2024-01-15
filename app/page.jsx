@@ -367,7 +367,7 @@ const Home = () => {
     }
     return () => {
       // clearInterval(scrambleInterval);
-      window.removeEventListener("resize", handleResize);
+      // window.removeEventListener("resize", handleResize);
       clearInterval(intervalId);
       window.removeEventListener("touchstart", handleEvent);
       window.removeEventListener("click", handleEvent);
