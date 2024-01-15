@@ -1,0 +1,19 @@
+.scramble-text{
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 100;
+    font-size: 100px;
+    color: #000000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    line-height: 1.205;
+    text-wrap:nowrap;
+}
+
+@media(max-width:1020px){
+    .scramble-text{
+    font-size: 50px;
+}
+}

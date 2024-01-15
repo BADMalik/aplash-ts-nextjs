@@ -1,0 +1,35 @@
+{
+  "name": "opta_template_final",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fontsource/unna": "^5.0.8",
+    "@fontsource/work-sans": "^5.0.8",
+    "@next/font": "^14.0.4",
+    "@twistezo/react-text-scramble": "^1.0.6",
+    "@types/node": "20.4.5",
+    "@types/react": "18.2.17",
+    "@types/react-dom": "18.2.7",
+    "animejs": "^3.2.2",
+    "axios": "^1.4.0",
+    "framer-motion": "^10.15.0",
+    "jQuery": "^1.7.4",
+    "next": "13.4.12",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "reactjs-popup": "^2.0.5",
+    "swiper": "^10.0.4",
+    "typescript": "5.1.6",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/animejs": "^3.1.12",
+    "jsdom": "^23.2.0"
+  }
+}
