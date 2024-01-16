@@ -3,7 +3,7 @@ import logo from "@/assets/images/logo.png";
 import { usePathname } from "next/navigation";
 // ----------
 
-const Footer = () => {
+const Footer = ({ dictionary }: { dictionary: any }) => {
   const pathname = usePathname();
   return (
     <>

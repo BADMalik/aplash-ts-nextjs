@@ -35,7 +35,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "opta-final/types/**/*.ts"
-, "app/middleware.ts", "components/Circle.js", "app/page.jsx"  ],
+, "app/middleware.ts", "components/Circle.js", "app/[locale]/page.tsx", "components/homeWrapper/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]

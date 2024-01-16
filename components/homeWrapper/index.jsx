@@ -1,119 +1,16 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import anime from "animejs";
 import "reactjs-popup/dist/index.css";
-const ScrambleComponentNoSSR = dynamic(() => import("../components/scramble"), {
+const ScrambleComponentNoSSR = dynamic(() => import("../scramble"), {
   ssr: false,
 });
+import { useRef, useEffect } from "react";
 
-// ------------
-
-const Home = () => {
+const Home = ({ dictionary }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const phrases = [
-      "APLASH OFFICIAL",
-      "UNLIMITED CHOICES",
-      "SIMPLE IDEA   BEST SOLUTIONS",
-      "CHOOSE US",
-    ];
-
-    // const el = document.querySelector(".text-home");
-    // class TextScramble {
-    //   constructor(el) {
-    //     this.el = el;
-    //     this.chars = "!<>@%&-_\\/[]{}—=+*^?#________";
-    //     this.update = this.update.bind(this);
-    //   }
-    //   setText(newText) {
-    //     const oldText = this.el.innerText;
-    //     const length = Math.max(oldText.length, newText.length);
-    //     const promise = new Promise((resolve) => (this.resolve = resolve));
-    //     this.queue = [];
-    //     for (let i = 0; i < length; i++) {
-    //       const from = oldText[i] || "";
-    //       const to = newText[i] || "";
-    //       const start = Math.floor(Math.random() * 40);
-    //       const end = start + Math.floor(Math.random() * 40);
-    //       // sleep(2000);
-    //       this.queue.push({ from, to, start, end });
-    //     }
-    //     cancelAnimationFrame(this.frameRequest);
-    //     this.frame = 0;
-    //     this.update();
-    //     return promise;
-    //   }
-    //   update() {
-    //     let output = "";
-    //     let complete = 0;
-    //     for (let i = 0, n = this.queue.length; i < n; i++) {
-    //       let { from, to, start, end, char } = this.queue[i];
-    //       if (this.frame >= end) {
-    //         complete++;
-    //         output += to;
-    //       } else if (this.frame >= start) {
-    //         if (!char || Math.random() < 0.28) {
-    //           char = this.randomChar();
-    //           this.queue[i].char = char;
-    //         }
-    //         output += `<span class="dud">${char}</span>`;
-    //       } else {
-    //         output += from;
-    //       }
-    //       // sleep(2000);
-    //     }
-    //     this.el.innerHTML = output;
-    //     if (complete === this.queue.length) {
-    //       this.resolve();
-    //     } else {
-    //       this.frameRequest = requestAnimationFrame(this.update);
-    //       this.frame++;
-    //     }
-    //   }
-    //   randomChar() {
-    //     return this.chars[Math.floor(Math.random() * this.chars.length)];
-    //   }
-    // }
-    // const fx = new TextScramble(el);
-
-    // let counter = 0;
-    // const next = () => {
-    //   fx.setText(phrases[counter]).then(() => {
-    //     setTimeout(next, 2000);
-    //   });
-    //   counter = (counter + 1) % phrases.length;
-    // };
-
-    // window.onload = function () {
-    //   next();
-    // };
-
-    // function sleep(milliseconds) {
-    //   const date = Date.now();
-    //   let currentDate = null;
-    //   do {
-    //     currentDate = Date.now();
-    //   } while (currentDate - date < milliseconds);
-    // }
-
-    {
-      /* window.onload = function(){
-		next();
-		$(function() {
-			$('.intro').addClass('go');
-
-			$('.reload').click(function() {
-				$('.intro').removeClass('go').delay(200).queue(function(next) {
-					$('.intro').addClass('go');
-					next();
-				});
-			});
-		})
-	} */
-    }
-
     var c = document.getElementById("c");
     var ctx = c.getContext("2d");
     var cH;
@@ -373,7 +270,6 @@ const Home = () => {
       window.removeEventListener("click", handleEvent);
     };
   }, []);
-
   return (
     <>
       <main
@@ -383,6 +279,7 @@ const Home = () => {
         }}
       >
         <canvas ref={canvasRef} id="c" />
+        {dictionary["server-component"].welcome}
         <ScrambleComponentNoSSR />
       </main>
     </>

@@ -1,9 +1,12 @@
 // Images
 import aboutImg from "@/assets/images/about.jpg";
-
+import { Locale } from "../../../i18n-config";
+import { getDictionary } from "../../../get-dictionary";
 // ------------
 
-function About() {
+const About = async ({ params: { lang } }: { params: { lang: Locale } }) => {
+  const dictionary = await getDictionary(lang);
+  // console.log({ dictionary }, "sdawd");
   return (
     <main className="page-background">
       <div id="content" className="site-content">
@@ -106,6 +109,6 @@ function About() {
       </div>
     </main>
   );
-}
+};
 
 export default About;

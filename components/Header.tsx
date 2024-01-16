@@ -4,17 +4,21 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-
+import { useLocale } from "next-intl";
 // Images
 import logo from "@/assets/images/logo.png";
-
+// import { useRouter } from "next/router";
 // --------------
 
-const Header = () => {
+const Header = ({ dictionary }: { dictionary: any }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-
+  const locale = useLocale();
+  // const router = useRouter();
+  // const data = router.locale;
+  // console.log({ data });
+  console.log("inside server", locale);
   const pathname: string = usePathname();
-
+  
   const toggleNav = () => {
     setMenuOpen((prev) => !prev);
   };
@@ -28,7 +32,7 @@ const Header = () => {
       {/* Header */}
       <div className={"menu-holder-front " + (menuOpen && "open")}>
         <div className="header-logo">
-          <Link href="/">
+          <Link locale={false} href={`${locale}/`}>
             <img src={logo.src} alt="Pekko" />
           </Link>
         </div>
@@ -66,8 +70,9 @@ const Header = () => {
                   <li>
                     <span className="menu-num">01</span>
                     <Link
-                      href="/"
-                      className={pathname === "/" ? "current" : ""}
+                      locale={false}
+                      href={`${locale}/`}
+                      className={pathname === `/` ? "current" : ""}
                       onClick={handleCloseMenu}
                     >
                       Home
@@ -76,8 +81,9 @@ const Header = () => {
                   <li>
                     <span className="menu-num">02</span>
                     <Link
-                      href="/about"
-                      className={pathname === "/about/" ? "current" : ""}
+                      href={`${locale}/about`}
+                      locale={false}
+                      className={pathname === `/about/` ? "current" : ""}
                       onClick={handleCloseMenu}
                     >
                       About
@@ -86,8 +92,9 @@ const Header = () => {
                   <li>
                     <span className="menu-num">03</span>
                     <Link
-                      href="/blog"
-                      className={pathname === "/blog/" ? "current" : ""}
+                      href={`${locale}/blog`}
+                      locale={false}
+                      className={pathname === `/blog/` ? "current" : ""}
                       onClick={handleCloseMenu}
                     >
                       Blog
@@ -96,8 +103,9 @@ const Header = () => {
                   <li>
                     <span className="menu-num">04</span>
                     <Link
-                      href="/contact"
-                      className={pathname === "/contact/" ? "current" : ""}
+                      href={`${locale}/contact`}
+                      locale={false}
+                      className={pathname === `/contact/` ? "current" : ""}
                       onClick={handleCloseMenu}
                     >
                       Contact

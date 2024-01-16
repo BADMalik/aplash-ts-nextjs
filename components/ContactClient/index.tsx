@@ -1,13 +1,12 @@
 "use client";
+import React from "react";
 
-import { useState } from "react";
-import axios from "axios";
-
-// Images
+type Props = {};
 import contactImg from "@/assets/images/contact.jpg";
 
 // -----------
-
+import { useState } from "react";
+import axios from "axios";
 // to handle sending form message
 type serverStateType = {
   submitting: boolean;
@@ -29,8 +28,7 @@ const initialFormData: formDataType = {
   subject: "",
   message: "",
 };
-
-const Contact = () => {
+const Contact = ({ dictionary }: { dictionary: any }) => {
   const [formData, setFormData] = useState<formDataType>(initialFormData);
   const [serverState, setServerState] = useState<serverStateType>({
     submitting: false,

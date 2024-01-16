@@ -7,8 +7,12 @@ import blogImg03 from "@/assets/images/blog/blog_03.jpg";
 import blogImg04 from "@/assets/images/blog/blog_04.jpg";
 
 // ------------
+import { Locale } from "../../../i18n-config";
+import { getDictionary } from "../../../get-dictionary";
+// ------------
 
-function Blog() {
+const Blog = async ({ params: { lang } }: { params: { lang: Locale } }) => {
+  const dictionary = await getDictionary(lang);
   return (
     <main className="page-background">
       <div id="content" className="site-content">
