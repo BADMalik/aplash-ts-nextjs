@@ -1,9 +1,210 @@
 {
-  "server-component": {
-    "welcome": "Welcasdadadawome"
+  "about": {
+    "about-title": "남들과는 다르게",
+    "about-title1": "고객님의 상상을 실현합니다",
+    "about-techs": "Vue,Jquery,Laravel,PHP,Node.JS,GO,React... 현존하는 모든 웹 기술을 적용하여 차별화된 제작이 가능합니다",
+    "about-techs-title": "기술",
+    "about-industry-title": "경험",
+    "about-industry": "10 년 이상 근무한 업계 전문가들과 함께 최고의 솔루션을 찾고 만족스러운 결과를 얻을 수 있습니다.",
+    "about-cross-title": "범용.",
+    "about-cross": "IE,Firefox,Edge,Chrome,Safari,Opera 등 모든 브라우저에 및 기기에서 완벽 대응하는 반응형 웹을 제작합니다.",
+    "about-utilization-title": "유틸.",
+    "about-utilization": "많은 부가기능들을 지원하고 있으며, 메신저 , 게시판, 갤러리, 문자연동, 소셜네트워크 연동, 각종 플러그인 등을 다양하게 웹사이트에 추가할 수 있습니다.",
+    "about-customize-title": "유틸.",
+    "about-customize": "당사 웹 제작 방식은 정해진 템플릿 기반 양산형이 아닙니다. 고객의 니즈에 맞추어 처음부터 끝까지 제작해드립니다.",
+    "about-details-title1": "창의적인 발상이 곧 트렌드입니다.",
+    "about-details-title2": "유니크한 디자인은 곧 각인입니다.",
+    "about-details-title3": "간편한 인터페이스는 확정적인 재방문을 약속합니다.",
+    "about-details1": "기술은 나날이 발전하고 시장은 매우 빠르게 변화하며 소비자들의 요구와 눈높이는 점점 높아지고 있습니다.",
+    "about-details2": "신선하고 창의적인 발상이 곧 트렌드이며 홍보입니다.",
+    "about-details3": "남들과 같거나 비슷해서는 차별화가 되지 않습니다.",
+    "about-details4": "남들과 같거나 비슷해서는 차별화가 되지 않습니다.",
+    "about-details5": "많은 사이트들이 사용하면서 검증된 GMB에 최소한의 Depth로 유저 편의적인",
+    "about-details6": "간편한 인터페이스를 지원하여 소비자들의 확정적인 재방문을 유도해드립니다."
   },
-  "counter": {
-    "increment": "Increment",
-    "decrement": "Decrement"
+  "auth": {
+    "failed": "These credentials do not match our records.",
+    "throttle": "Too many login attempts. Please try again in :seconds seconds."
+  },
+  "contact": {
+    "choose_option": "Do you have a project plan?",
+    "projectPlan_yes": "Yes, I do have one",
+    "projectPlan_no": "No, I do not have one",
+    "projectPlan_you": "We will ask you to take care of it",
+    "launch_date": "Choose your launch date",
+    "asap": "As soon as possible",
+    "after": "After",
+    "months": "Months",
+    "budget": "Choose your budget",
+    "under": "Under",
+    "over": "Over",
+    "usd": "USD",
+    "title": "Project Title",
+    "desc": "Project Description",
+    "not_sure": "I am not sure"
+  },
+  "index": {
+    "brand1": "Brand Identity",
+    "brand2": "We build special logos and brands",
+    "development1": "Web & App Development",
+    "development2": "With the best standards, processes tailored to your desires",
+    "marketing1": "Marketing Campaign",
+    "marketing2": "We think differently to help you grow"
+  },
+  "messages": {
+    "title": "APLASH OFFICIAL",
+    "paragraph": "UNLIMITED CHOICES",
+    "body1": "SIMPLE IDEA   BEST SOLUTIONS",
+    "body2": "CHOOSE US",
+    "Name": "Name",
+    "Subject": "Subject",
+    "Message": "Message",
+    "SEND": "Send"
+  },
+  "pagination": { "previous": "&laquo; Previous", "next": "Next &raquo;" },
+  "passwords": {
+    "reset": "Your password has been reset!",
+    "sent": "We have emailed your password reset link!",
+    "throttled": "Please wait before retrying.",
+    "token": "This password reset token is invalid.",
+    "user": "We can't find a user with that email address."
+  },
+  "nigga": "nigg 1232a",
+  "shared": {
+    "landing_title": "당신만을 위한, 아름다운 웹을 만듭니다",
+    "nev_Home": "Home",
+    "nev_About": "About",
+    "Portfolio": "Portfolio",
+    "nev_Progress": "Progress",
+    "nev_Contact": "Contact",
+    "EMAIL": "E-Mail",
+    "Hours": "Hours",
+    "Address": "Location",
+    "PHONE": "Phone",
+    "LOCATION": "Location",
+    "aplash-email": "support@aplash.dev",
+    "address": "Gangnam Daero 69 Gil 8 10F, Seoul",
+    "PROJECT": "Project",
+    "CLIENT": "Client",
+    "DATE": "Date",
+    "Techs": "Techs",
+    "contact_message": "Easy, Powerful web starts from here.",
+    "Contact_text1": "텍스트1",
+    "Contact_text2": "텍스트2",
+    "services": "Services",
+    "process": "Process",
+    "Language": "Language"
+  },
+  "validation": {
+    "accepted": "The :attribute must be accepted.",
+    "active_url": "The :attribute is not a valid URL.",
+    "after": "The :attribute must be a date after :date.",
+    "after_or_equal": "The :attribute must be a date after or equal to :date.",
+    "alpha": "The :attribute may only contain letters.",
+    "alpha_dash": "The :attribute may only contain letters, numbers, dashes, and underscores.",
+    "alpha_num": "The :attribute may only contain letters and numbers.",
+    "array": "The :attribute must be an array.",
+    "before": "The :attribute must be a date before :date.",
+    "before_or_equal": "The :attribute must be a date before or equal to :date.",
+    "between": {
+      "numeric": "The :attribute must be between :min and :max.",
+      "file": "The :attribute must be between :min and :max kilobytes.",
+      "string": "The :attribute must be between :min and :max characters.",
+      "array": "The :attribute must have between :min and :max items."
+    },
+    "boolean": "The :attribute field must be true or false.",
+    "confirmed": "The :attribute confirmation does not match.",
+    "date": "The :attribute is not a valid date.",
+    "date_equals": "The :attribute must be a date equal to :date.",
+    "date_format": "The :attribute does not match the format :format.",
+    "different": "The :attribute and :other must be different.",
+    "digits": "The :attribute must be :digits digits.",
+    "digits_between": "The :attribute must be between :min and :max digits.",
+    "dimensions": "The :attribute has invalid image dimensions.",
+    "distinct": "The :attribute field has a duplicate value.",
+    "email": "The :attribute must be a valid email address.",
+    "ends_with": "The :attribute must end with one of the following: :values.",
+    "exists": "The selected :attribute is invalid.",
+    "file": "The :attribute must be a file.",
+    "filled": "The :attribute field must have a value.",
+    "gt": {
+      "numeric": "The :attribute must be greater than :value.",
+      "file": "The :attribute must be greater than :value kilobytes.",
+      "string": "The :attribute must be greater than :value characters.",
+      "array": "The :attribute must have more than :value items."
+    },
+    "gte": {
+      "numeric": "The :attribute must be greater than or equal :value.",
+      "file": "The :attribute must be greater than or equal :value kilobytes.",
+      "string": "The :attribute must be greater than or equal :value characters.",
+      "array": "The :attribute must have :value items or more."
+    },
+    "image": "The :attribute must be an image.",
+    "in": "The selected :attribute is invalid.",
+    "in_array": "The :attribute field does not exist in :other.",
+    "integer": "The :attribute must be an integer.",
+    "ip": "The :attribute must be a valid IP address.",
+    "ipv4": "The :attribute must be a valid IPv4 address.",
+    "ipv6": "The :attribute must be a valid IPv6 address.",
+    "json": "The :attribute must be a valid JSON string.",
+    "lt": {
+      "numeric": "The :attribute must be less than :value.",
+      "file": "The :attribute must be less than :value kilobytes.",
+      "string": "The :attribute must be less than :value characters.",
+      "array": "The :attribute must have less than :value items."
+    },
+    "lte": {
+      "numeric": "The :attribute must be less than or equal :value.",
+      "file": "The :attribute must be less than or equal :value kilobytes.",
+      "string": "The :attribute must be less than or equal :value characters.",
+      "array": "The :attribute must not have more than :value items."
+    },
+    "max": {
+      "numeric": "The :attribute may not be greater than :max.",
+      "file": "The :attribute may not be greater than :max kilobytes.",
+      "string": "The :attribute may not be greater than :max characters.",
+      "array": "The :attribute may not have more than :max items."
+    },
+    "mimes": "The :attribute must be a file of type: :values.",
+    "mimetypes": "The :attribute must be a file of type: :values.",
+    "min": {
+      "numeric": "The :attribute must be at least :min.",
+      "file": "The :attribute must be at least :min kilobytes.",
+      "string": "The :attribute must be at least :min characters.",
+      "array": "The :attribute must have at least :min items."
+    },
+    "not_in": "The selected :attribute is invalid.",
+    "not_regex": "The :attribute format is invalid.",
+    "numeric": "The :attribute must be a number.",
+    "password": "The password is incorrect.",
+    "present": "The :attribute field must be present.",
+    "regex": "The :attribute format is invalid.",
+    "required": "The :attribute field is required.",
+    "required_if": "The :attribute field is required when :other is :value.",
+    "required_unless": "The :attribute field is required unless :other is in :values.",
+    "required_with": "The :attribute field is required when :values is present.",
+    "required_with_all": "The :attribute field is required when :values are present.",
+    "required_without": "The :attribute field is required when :values is not present.",
+    "required_without_all": "The :attribute field is required when none of :values are present.",
+    "same": "The :attribute and :other must match.",
+    "size": {
+      "numeric": "The :attribute must be :size.",
+      "file": "The :attribute must be :size kilobytes.",
+      "string": "The :attribute must be :size characters.",
+      "array": "The :attribute must contain :size items."
+    },
+    "starts_with": "The :attribute must start with one of the following: :values.",
+    "string": "The :attribute must be a string.",
+    "timezone": "The :attribute must be a valid zone.",
+    "unique": "The :attribute has already been taken.",
+    "uploaded": "The :attribute failed to upload.",
+    "url": "The :attribute format is invalid.",
+    "uuid": "The :attribute must be a valid UUID.",
+    "custom": {
+      "attribute-name": {
+        "rule-name": "custom-message"
+      }
+    },
+    "attributes": {}
   }
 }

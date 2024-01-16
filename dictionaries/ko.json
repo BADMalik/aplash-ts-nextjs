@@ -1,9 +1,63 @@
 {
-  "server-component": {
-    "welcome": "Welcome"
+  "about": {
+    "about-title": "남들과는 다르게",
+    "about-title1": "고객님의 상상을 실현합니다",
+    "about-techs": "Vue,Jquery,Laravel,PHP,Node.JS,GO,React... 현존하는 모든 웹 기술을 적용하여 차별화된 제작이 가능합니다",
+    "about-techs-title": "기술",
+    "about-industry-title": "경험",
+    "about-industry": "10 년 이상 근무한 업계 전문가들과 함께 최고의 솔루션을 찾고 만족스러운 결과를 얻을 수 있습니다.",
+    "about-cross-title": "범용",
+    "about-cross": "IE,Firefox,Edge,Chrome,Safari,Opera 등 모든 브라우저에 및 기기에서 완벽 대응하는 반응형 웹을 제작합니다.",
+    "about-utilization-title": "유틸",
+    "about-utilization": "많은 부가기능들을 지원하고 있으며, 메신저 , 게시판, 갤러리, 문자연동, 소셜네트워크 연동, 각종 플러그인 등을 다양하게 웹사이트에 추가할 수 있습니다.",
+    "about-customize-title": "개성",
+    "about-customize": "당사 웹 제작 방식은 정해진 템플릿 기반 양산형이 아닙니다. 고객의 니즈에 맞추어 처음부터 끝까지 제작해드립니다.",
+    "about-details-title1": "창의적인 발상이 곧 트렌드입니다.",
+    "about-details-title2": "유니크한 디자인은 곧 각인입니다.",
+    "about-details-title3": "간편한 인터페이스는 확정적인 재방문을 약속합니다.",
+    "about-details1": "기술은 나날이 발전하고 시장은 매우 빠르게 변화하며 소비자들의 요구와 눈높이는 점점 높아지고 있습니다.",
+    "about-details2": "신선하고 창의적인 발상이 곧 트렌드이며 홍보입니다.",
+    "about-details3": "남들과 같거나 비슷해서는 차별화가 되지 않습니다.",
+    "about-details4": "스페셜하고 유니크한 디자인이 소비자들에게 강렬한 인상을 심어줄 것입니다.",
+    "about-details5": "많은 사이트들이 사용하면서 검증된 GMB에 최소한의 Depth로 유저 편의적인",
+    "about-details6": "간편한 인터페이스를 지원하여 소비자들의 확정적인 재방문을 유도해드립니다."
   },
-  "counter": {
-    "increment": "Increment",
-    "decrement": "Decrement"
+  "messages": {
+    "title": "APLASH OFFICIAL",
+    "paragraph": "UNLIMITED CHOICES",
+    "body1": "SIMPLE IDEA   BEST SOLUTIONS",
+    "body2": "CHOOSE US"
+  },
+  "shared": {
+    "landing_title": "당신만을 위한, 아름다운 웹을 만듭니다",
+    "nev_Home": "Home",
+    "nev_About": "About",
+    "Portfolio": "Portfolio",
+    "nev_Progress": "Progress",
+    "nev_Contact": "Contact",
+    "EMAIL": "E-Mail",
+    "Hours": "Hours",
+    "Address": "Location",
+    "PHONE": "Phone",
+    "LOCATION": "Location",
+    "aplash-email": "support@aplash.dev",
+    "address": "서초구 강남대로 69길 8 10층, 서울특별시",
+    "PROJECT": "Project",
+    "CLIENT": "Client",
+    "DATE": "Date",
+    "Techs": "Techs",
+    "contact_message": "간단하고, 강력한 고객님만의 상담을 시작합니다.",
+    "Contact_text1": "고객님의 희망사항을 받습니다.",
+    "Contact_text2": "요구사항이 디테일할수록 더 정확한 상담이 가능합니다.",
+    "process": "Process",
+    "Language": "Language"
+  },
+  "index": {
+    "brand1": "브랜드 아이덴디티",
+    "brand2": "특별한 브랜드 및 로고,스토리 제작",
+    "development1": "웹&앱 개발",
+    "development2": "원하는 형태의 웹, 앱개발",
+    "marketing1": "맞춤형 마케팅",
+    "marketing2": "제작에서만 끝나는게 아닌, 마케팅까지의 통합 솔루션"
   }
 }
