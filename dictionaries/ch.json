@@ -1,36 +1,27 @@
-// {
-//   "server-component": {
-//     "welcome": "Welcome"
-//   },
-//   "counter": {
-//     "increment": "Increment",
-//     "decrement": "Decrement"
-//   }
-// }
 
 {
   "about": {
-    "about-title": "在创新的想法",
-    "about-title1": "实现你的梦想",
-    "about-techs": "Vue,Jquery,Laravel,PHP,Node.JS,GO,React... 可用所有的网络技术开发",
-    "about-techs-title": "技术",
-    "about-industry-title": "经验",
-    "about-industry": "10 年以上的专家，服务到满意",
-    "about-cross-title": "常用",
-    "about-cross": "制作 IE,Firefox,Edge,Chrome,Safari,Opera 等所有的游览器，网络机器可用网站。",
-    "about-utilization-title": "功能",
-    "about-utilization": "支持许多功能，聊天、公告栏、画廊、文字联动、社交网络联动、各种插件等多样地添加到网站上。",
-    "about-customize-title": "特色",
-    "about-customize": "我们的网页制作方式并非固定的模板基础量产型。 根据顾客需求从头到尾进行制作。",
-    "about-details-title1": "创新就是趋势。",
-    "about-details-title2": "独特的设计就是刻印",
-    "about-details-title3": "简便的接口提高再次访问",
-    "about-details1": "技术，市场的变化更快，消费者的要救越高",
-    "about-details2": "新鲜，创新的想法为趋势，宣传",
-    "about-details3": "同样的想法，不是为创新",
-    "about-details4": "特殊、独特的设计可为消费者带来强烈印象。",
-    "about-details5": "많은 사이트들이 사용하면서 검증된 GMB에 최소한의 Depth로 유저 편의적인",
-    "about-details6": "간편한 인터페이스를 지원하여 소비자들의 확정적인 재방문을 유도해드립니다."
+    "aboutTitle": "在创新的想法",
+    "aboutTitle1": "实现你的梦想",
+    "aboutTechs": "Vue,Jquery,Laravel,PHP,Node.JS,GO,React... 可用所有的网络技术开发",
+    "aboutTechsTitle": "技术",
+    "aboutIndustryTitle": "经验",
+    "aboutIndustry": "10 年以上的专家，服务到满意",
+    "aboutCrossTitle": "常用",
+    "aboutCross": "制作 IE,Firefox,Edge,Chrome,Safari,Opera 等所有的游览器，网络机器可用网站。",
+    "aboutUtilizationTitle": "功能",
+    "aboutUtilization": "支持许多功能，聊天、公告栏、画廊、文字联动、社交网络联动、各种插件等多样地添加到网站上。",
+    "aboutCustomizeTitle": "特色",
+    "aboutCustomize": "我们的网页制作方式并非固定的模板基础量产型。 根据顾客需求从头到尾进行制作。",
+    "aboutDetailsTitle1": "创新就是趋势。",
+    "aboutDetailsTitle2": "独特的设计就是刻印",
+    "aboutDetailsTitle3": "简便的接口提高再次访问",
+    "aboutDetails1": "技术，市场的变化更快，消费者的要救越高",
+    "aboutDetails2": "新鲜，创新的想法为趋势，宣传",
+    "aboutDetails3": "同样的想法，不是为创新",
+    "aboutDetails4": "特殊、独特的设计可为消费者带来强烈印象。",
+    "aboutDetails5": "많은 사이트들이 사용하면서 검증된 GMB에 최소한의 Depth로 유저 편의적인",
+    "aboutDetails6": "간편한 인터페이스를 지원하여 소비자들의 확정적인 재방문을 유도해드립니다."
   },
   "index": {
     "brand1": "Brand Identity",
@@ -58,7 +49,7 @@
     "Address": "Location",
     "PHONE": "Phone",
     "LOCATION": "Location",
-    "aplash-email": "support@aplash.dev",
+    "aplashEmail": "support@aplash.dev",
     "address": "Gangnam Daero 69 Gil 8 10F, 首尔",
     "PROJECT": "Project",
     "CLIENT": "Client",

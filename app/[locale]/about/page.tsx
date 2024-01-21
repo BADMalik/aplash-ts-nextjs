@@ -1,7 +1,12 @@
 // Images
-import aboutImg from "@/assets/images/about.jpg";
-import { Locale } from "../../../i18n-config";
-import { getDictionary } from "../../../get-dictionary";
+import aboutImg from '@/assets/images/about1.jpg';
+import { Locale } from '../../../i18n-config';
+import { getDictionary } from '../../../get-dictionary';
+// Images
+import japanese from '@/assets/images/flags/japanese.jpg';
+import english from '@/assets/images/flags/english.jpg';
+import chinese from '@/assets/images/flags/chinese.jpg';
+import korean from '@/assets/images/flags/korean.jpg';
 // ------------
 
 const About = async ({ params: { lang } }: { params: { lang: Locale } }) => {
@@ -93,17 +98,29 @@ const About = async ({ params: { lang } }: { params: { lang: Locale } }) => {
             for which there’s little good evidence something incredible.
           </div>
           <div className="clear"></div>
-
-          <div className="social-holder center-text top-60">
-            <a className="social-text" href="https://www.twitter.com/">
-              TWITTER
-            </a>
-            <a className="social-text" href="https://www.facebook.com/">
-              FACEBOOK
-            </a>
-            <a className="social-text" href="https://www.instagram.com/">
-              INSTAGRAM
-            </a>
+          <div className="flag-wrapper center-text top-60">
+            <ul>
+              <li>
+                <a>
+                  <img src={japanese.src} alt="" />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <img src={english.src} alt="" />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <img src={chinese.src} alt="" />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <img src={korean.src} alt="" />
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

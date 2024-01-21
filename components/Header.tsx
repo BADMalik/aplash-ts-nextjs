@@ -6,7 +6,11 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 // Images
-import logo from "@/assets/images/logo.png";
+import logo from "@/assets/images/aplash-big.jpg";
+import japanese from "@/assets/images/flags/japanese.jpg";
+import english from "@/assets/images/flags/english.jpg";
+import chinese from "@/assets/images/flags/chinese.jpg";
+import korean from "@/assets/images/flags/korean.jpg";
 // import { useRouter } from "next/router";
 // --------------
 
@@ -18,7 +22,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
   // console.log({ data });
   console.log("inside server", locale);
   const pathname: string = usePathname();
-  
+
   const toggleNav = () => {
     setMenuOpen((prev) => !prev);
   };
@@ -32,7 +36,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
       {/* Header */}
       <div className={"menu-holder-front " + (menuOpen && "open")}>
         <div className="header-logo">
-          <Link locale={false} href={`${locale}/`}>
+          <Link locale={false} href={`/`}>
             <img src={logo.src} alt="Pekko" />
           </Link>
         </div>
@@ -71,7 +75,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
                     <span className="menu-num">01</span>
                     <Link
                       locale={false}
-                      href={`${locale}/`}
+                      href={`/`}
                       className={pathname === `/` ? "current" : ""}
                       onClick={handleCloseMenu}
                     >
@@ -81,7 +85,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
                   <li>
                     <span className="menu-num">02</span>
                     <Link
-                      href={`${locale}/about`}
+                      href={`/about`}
                       locale={false}
                       className={pathname === `/about/` ? "current" : ""}
                       onClick={handleCloseMenu}
@@ -92,18 +96,18 @@ const Header = ({ dictionary }: { dictionary: any }) => {
                   <li>
                     <span className="menu-num">03</span>
                     <Link
-                      href={`${locale}/blog`}
+                      href={`/services`}
                       locale={false}
-                      className={pathname === `/blog/` ? "current" : ""}
+                      className={pathname === `/services/` ? "current" : ""}
                       onClick={handleCloseMenu}
                     >
-                      Blog
+                      Services
                     </Link>
                   </li>
                   <li>
                     <span className="menu-num">04</span>
                     <Link
-                      href={`${locale}/contact`}
+                      href={`/contact`}
                       locale={false}
                       className={pathname === `/contact/` ? "current" : ""}
                       onClick={handleCloseMenu}
@@ -115,30 +119,46 @@ const Header = ({ dictionary }: { dictionary: any }) => {
               </nav>
 
               <div className="menu-right-text">
-                <p className="menu-text-title">EMAIL</p>
-                <div className="menu-text">hello@yourwebsite.com</div>
-                <br />
-                <p className="menu-text-title">PHONE</p>
-                <div className="menu-text">+988 345 783 174</div>
-                <br />
-                <p className="menu-text-title">LOCATION</p>
-                <div className="menu-text">
-                  2546 Some Street, <br />
-                  US Based Left 5,
-                  <br />
-                  United States, New York
+                <div>
+                  <p className="menu-text-title">E-mail</p>
+                  <div className="menu-text">hello@yourwebsite.com</div>
                 </div>
-                <br />
-                <div className="social-holder">
-                  <a className="social-text" href="https://www.twitter.com/">
-                    TWITTER
-                  </a>
-                  <a className="social-text" href="https://www.facebook.com/">
-                    FACEBOOK
-                  </a>
-                  <a className="social-text" href="https://www.instagram.com/">
-                    INSTAGRAM
-                  </a>
+                <div>
+                  <p className="menu-text-title">Phone</p>
+                  <div className="menu-text">+988 345 783 174</div>
+                </div>
+                <div>
+                  <p className="menu-text-title">Location</p>
+                  <div className="menu-text">
+                    2819 Young Road, Massachusetts, United States
+                  </div>
+                </div>
+                <div>
+                  <p className="menu-text-title">Language</p>
+                  <div className="flag-wrapper">
+                    <ul>
+                      <li>
+                        <a>
+                          <img src={japanese.src} alt="" />
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          <img src={english.src} alt="" />
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          <img src={chinese.src} alt="" />
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          <img src={korean.src} alt="" />
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -175,30 +195,46 @@ export default Header;
     </nav>
 
     <div className="menu-right-text">
-      <p className="menu-text-title">EMAIL</p>
-      <div className="menu-text">hello@yourwebsite.com</div>
-      <br />
-      <p className="menu-text-title">PHONE</p>
-      <div className="menu-text">+988 345 783 174</div>
-      <br />
-      <p className="menu-text-title">LOCATION</p>
-      <div className="menu-text">
-        2546 Some Street, <br />
-        US Based Left 5,
-        <br />
-        United States, New York
+      <div>
+        <p className="menu-text-title">E-mail</p>
+        <div className="menu-text">hello@yourwebsite.com</div>
       </div>
-      <br />
-      <div className="social-holder">
-        <a className="social-text" href="#">
-          TWITTER
-        </a>
-        <a className="social-text" href="#">
-          FACEBOOK
-        </a>
-        <a className="social-text" href="#">
-          INSTAGRAM
-        </a>
+      <div>
+        <p className="menu-text-title">Phone</p>
+        <div className="menu-text">+988 345 783 174</div>
+      </div>
+      <div>
+        <p className="menu-text-title">Location</p>
+        <div className="menu-text">
+          2819 Young Road, Massachusetts, United States
+        </div>
+      </div>
+      <div>
+        <p className="menu-text-title">Language</p>
+        <div className="flag-wrapper">
+          <ul>
+            <li>
+              <a>
+                <img src={japanese.src} alt="" />
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src={english.src} alt="" />
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src={chinese.src} alt="" />
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src={korean.src} alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

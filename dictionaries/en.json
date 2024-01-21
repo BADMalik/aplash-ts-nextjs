@@ -1,26 +1,26 @@
 {
   "about": {
-    "about-title": "남들과는 다르게",
-    "about-title1": "고객님의 상상을 실현합니다",
-    "about-techs": "Vue,Jquery,Laravel,PHP,Node.JS,GO,React... 현존하는 모든 웹 기술을 적용하여 차별화된 제작이 가능합니다",
-    "about-techs-title": "기술",
-    "about-industry-title": "경험",
-    "about-industry": "10 년 이상 근무한 업계 전문가들과 함께 최고의 솔루션을 찾고 만족스러운 결과를 얻을 수 있습니다.",
-    "about-cross-title": "범용.",
-    "about-cross": "IE,Firefox,Edge,Chrome,Safari,Opera 등 모든 브라우저에 및 기기에서 완벽 대응하는 반응형 웹을 제작합니다.",
-    "about-utilization-title": "유틸.",
-    "about-utilization": "많은 부가기능들을 지원하고 있으며, 메신저 , 게시판, 갤러리, 문자연동, 소셜네트워크 연동, 각종 플러그인 등을 다양하게 웹사이트에 추가할 수 있습니다.",
-    "about-customize-title": "유틸.",
-    "about-customize": "당사 웹 제작 방식은 정해진 템플릿 기반 양산형이 아닙니다. 고객의 니즈에 맞추어 처음부터 끝까지 제작해드립니다.",
-    "about-details-title1": "창의적인 발상이 곧 트렌드입니다.",
-    "about-details-title2": "유니크한 디자인은 곧 각인입니다.",
-    "about-details-title3": "간편한 인터페이스는 확정적인 재방문을 약속합니다.",
-    "about-details1": "기술은 나날이 발전하고 시장은 매우 빠르게 변화하며 소비자들의 요구와 눈높이는 점점 높아지고 있습니다.",
-    "about-details2": "신선하고 창의적인 발상이 곧 트렌드이며 홍보입니다.",
-    "about-details3": "남들과 같거나 비슷해서는 차별화가 되지 않습니다.",
-    "about-details4": "남들과 같거나 비슷해서는 차별화가 되지 않습니다.",
-    "about-details5": "많은 사이트들이 사용하면서 검증된 GMB에 최소한의 Depth로 유저 편의적인",
-    "about-details6": "간편한 인터페이스를 지원하여 소비자들의 확정적인 재방문을 유도해드립니다."
+    "aboutTitle": "남들과는 다르게",
+    "aboutTitle1": "고객님의 상상을 실현합니다",
+    "aboutTechs": "Vue,Jquery,Laravel,PHP,Node.JS,GO,React... 현존하는 모든 웹 기술을 적용하여 차별화된 제작이 가능합니다",
+    "aboutTechsTitle": "기술",
+    "aboutIndustryTitle": "경험",
+    "aboutIndustry": "10 년 이상 근무한 업계 전문가들과 함께 최고의 솔루션을 찾고 만족스러운 결과를 얻을 수 있습니다.",
+    "aboutCrossTitle": "범용.",
+    "aboutCross": "IE,Firefox,Edge,Chrome,Safari,Opera 등 모든 브라우저에 및 기기에서 완벽 대응하는 반응형 웹을 제작합니다.",
+    "aboutUtilizationTitle": "유틸.",
+    "aboutUtilization": "많은 부가기능들을 지원하고 있으며, 메신저 , 게시판, 갤러리, 문자연동, 소셜네트워크 연동, 각종 플러그인 등을 다양하게 웹사이트에 추가할 수 있습니다.",
+    "aboutCustomizeTitle": "유틸.",
+    "aboutCustomize": "당사 웹 제작 방식은 정해진 템플릿 기반 양산형이 아닙니다. 고객의 니즈에 맞추어 처음부터 끝까지 제작해드립니다.",
+    "aboutDetailsTitle1": "창의적인 발상이 곧 트렌드입니다.",
+    "aboutDetailsTitle2": "유니크한 디자인은 곧 각인입니다.",
+    "aboutDetailsTitle3": "간편한 인터페이스는 확정적인 재방문을 약속합니다.",
+    "aboutDetails1": "기술은 나날이 발전하고 시장은 매우 빠르게 변화하며 소비자들의 요구와 눈높이는 점점 높아지고 있습니다.",
+    "aboutDetails2": "신선하고 창의적인 발상이 곧 트렌드이며 홍보입니다.",
+    "aboutDetails3": "남들과 같거나 비슷해서는 차별화가 되지 않습니다.",
+    "aboutDetails4": "남들과 같거나 비슷해서는 차별화가 되지 않습니다.",
+    "aboutDetails5": "많은 사이트들이 사용하면서 검증된 GMB에 최소한의 Depth로 유저 편의적인",
+    "aboutDetails6": "간편한 인터페이스를 지원하여 소비자들의 확정적인 재방문을 유도해드립니다."
   },
   "auth": {
     "failed": "These credentials do not match our records.",
@@ -82,7 +82,7 @@
     "Address": "Location",
     "PHONE": "Phone",
     "LOCATION": "Location",
-    "aplash-email": "support@aplash.dev",
+    "aplashEmail": "support@aplash.dev",
     "address": "Gangnam Daero 69 Gil 8 10F, Seoul",
     "PROJECT": "Project",
     "CLIENT": "Client",
@@ -122,7 +122,7 @@
     "digits_between": "The :attribute must be between :min and :max digits.",
     "dimensions": "The :attribute has invalid image dimensions.",
     "distinct": "The :attribute field has a duplicate value.",
-    "email": "The :attribute must be a valid email address.",
+    "email": "Please enter a valid email address.",
     "ends_with": "The :attribute must end with one of the following: :values.",
     "exists": "The selected :attribute is invalid.",
     "file": "The :attribute must be a file.",
@@ -173,13 +173,15 @@
       "string": "The :attribute must be at least :min characters.",
       "array": "The :attribute must have at least :min items."
     },
+"uploadSize" : "Files less than 20MBs are allowed",
+"invalidFile": "Only Images, PDF, docs, excels, ppt are allowed.",
     "not_in": "The selected :attribute is invalid.",
     "not_regex": "The :attribute format is invalid.",
     "numeric": "The :attribute must be a number.",
     "password": "The password is incorrect.",
     "present": "The :attribute field must be present.",
     "regex": "The :attribute format is invalid.",
-    "required": "The :attribute field is required.",
+    "required": "Field is required.",
     "required_if": "The :attribute field is required when :other is :value.",
     "required_unless": "The :attribute field is required unless :other is in :values.",
     "required_with": "The :attribute field is required when :values is present.",
@@ -201,8 +203,8 @@
     "url": "The :attribute format is invalid.",
     "uuid": "The :attribute must be a valid UUID.",
     "custom": {
-      "attribute-name": {
-        "rule-name": "custom-message"
+      "attributeName": {
+        "ruleName": "custom-message"
       }
     },
     "attributes": {}

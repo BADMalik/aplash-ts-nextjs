@@ -1,6 +1,6 @@
 import HeaderWrapper from "@/components/headerWrapper";
 import FooterWrapper from "@/components/footerWrapper";
-import ClientLayoutWrapper from "@/components/ClientLayoutWrapper";
+import ClientLayoutWrapper from "../../components/clientLayoutWrapper";
 // FONTS
 import "@fontsource/work-sans/400.css";
 import "@fontsource/work-sans/500.css";
