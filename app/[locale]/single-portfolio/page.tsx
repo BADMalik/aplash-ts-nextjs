@@ -7,7 +7,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-
+export const dynamic = "force-dynamic";
 // Images
 import item01img from "@/assets/images/portfolio-item/item_01.jpg";
 import item02img from "@/assets/images/portfolio-item/item_02.jpg";

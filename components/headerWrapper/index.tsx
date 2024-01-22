@@ -1,7 +1,7 @@
-import { getDictionary } from '../../get-dictionary';
-import { Locale } from '../../i18n-config';
-import 'reactjs-popup/dist/index.css';
-import Header from '../Header';
+import { getDictionary } from "../../get-dictionary";
+import { Locale } from "../../i18n-config";
+import "reactjs-popup/dist/index.css";
+import Header from "../Header";
 const HeaderWrapper = async ({
   params: { lang },
 }: {
@@ -13,7 +13,7 @@ const HeaderWrapper = async ({
       <main
         className="page-background"
         style={{
-          position: 'relative',
+          position: "relative",
         }}
       >
         <Header dictionary={dictionary} />
@@ -22,4 +22,4 @@ const HeaderWrapper = async ({
   );
 };
 
-export default HeaderWrapper;
+export default HeaderWrapper as any;

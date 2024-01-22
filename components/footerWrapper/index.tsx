@@ -23,4 +23,4 @@ const FooterWrapper = async ({
   );
 };
 
-export default FooterWrapper;
+export default FooterWrapper as any;

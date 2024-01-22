@@ -1,14 +1,14 @@
 // Images
-import aboutImg from '@/assets/images/about1.jpg';
-import { Locale } from '../../../i18n-config';
-import { getDictionary } from '../../../get-dictionary';
+import aboutImg from "@/assets/images/about1.jpg";
+import { Locale } from "../../../i18n-config";
+import { getDictionary } from "../../../get-dictionary";
 // Images
-import japanese from '@/assets/images/flags/japanese.jpg';
-import english from '@/assets/images/flags/english.jpg';
-import chinese from '@/assets/images/flags/chinese.jpg';
-import korean from '@/assets/images/flags/korean.jpg';
+import japanese from "@/assets/images/flags/japanese.jpg";
+import english from "@/assets/images/flags/english.jpg";
+import chinese from "@/assets/images/flags/chinese.jpg";
+import korean from "@/assets/images/flags/korean.jpg";
 // ------------
-
+export const dynamic = "force-dynamic";
 const About = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const dictionary = await getDictionary(lang);
   // console.log({ dictionary }, "sdawd");

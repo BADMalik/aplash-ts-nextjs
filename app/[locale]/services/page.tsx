@@ -5,7 +5,7 @@ import blogImg01 from '@/assets/images/blog/blog_01.jpg';
 import blogImg02 from '@/assets/images/blog/blog_02.jpg';
 import blogImg03 from '@/assets/images/blog/blog_03.jpg';
 import blogImg04 from '@/assets/images/blog/blog_04.jpg';
-
+export const dynamic = "force-dynamic";
 // ------------
 import { Locale } from '../../../i18n-config';
 import { getDictionary } from '../../../get-dictionary';

@@ -1,4 +1,3 @@
-
 export const i18n = {
   defaultLocale: "en",
   locales: ["en", "ch", "ko", "jp"],
@@ -6,9 +5,6 @@ export const i18n = {
 
 export const nextI18NextConfig = {
   i18n,
-  // Path to the translation files
-  // i.e., ./public/locales/en.json, ./public/locales/ch.json, etc.
-  localePath: `${process.env.LAMBDA_TASK_ROOT}/public/dictionaries`,
   outputFileTracing:true
 } as const;
 

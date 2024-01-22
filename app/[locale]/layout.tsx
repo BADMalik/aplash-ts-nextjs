@@ -23,7 +23,7 @@ import { i18n, type Locale } from "../../i18n-config";
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
-export const dynamic = "auto";
+export const dynamic = "force-dynamic";
 
 // --------------
 // Metadata of the website (used to inprove SEO of the website)
@@ -50,13 +50,11 @@ export default function RootLayout({
     <html lang={params.lang}>
       <body className="page-background">
         <div className="site-wrapper">
-          {/* <ClientLayoutWrapper>
+          <ClientLayoutWrapper>
             <HeaderWrapper params={params} />
-          </ClientLayoutWrapper> */}
-          adaw
-          {/* <ClientLayoutWrapper>
+            {children}
             <FooterWrapper params={params} />
-          </ClientLayoutWrapper> */}
+          </ClientLayoutWrapper>
         </div>
       </body>
     </html>
