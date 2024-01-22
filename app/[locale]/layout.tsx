@@ -50,13 +50,13 @@ export default function RootLayout({
     <html lang={params.lang}>
       <body className="page-background">
         <div className="site-wrapper">
-          <ClientLayoutWrapper>
+          {/* <ClientLayoutWrapper>
             <HeaderWrapper params={params} />
-          </ClientLayoutWrapper>
-          {children}
-          <ClientLayoutWrapper>
+          </ClientLayoutWrapper> */}
+          adaw
+          {/* <ClientLayoutWrapper>
             <FooterWrapper params={params} />
-          </ClientLayoutWrapper>
+          </ClientLayoutWrapper> */}
         </div>
       </body>
     </html>
