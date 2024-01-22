@@ -35,7 +35,14 @@
     "app/[locale]/page.tsx",
     "components/homeWrapper/index.jsx",
     "./public/dictionaries",
-    ".next/server/*.js"
+    ".next/server/*.js",
+    ".next/data/*/*.json",
+    "_next/data/*/*.json",
+    "_next/data/**/*.json",
+    ".next/data/**/*.json",
+    ".next/data/*.js",
+    "_next/data/*/*.js",
+    ".next/data/*/*.js"
   ],
   "exclude": ["node_modules"]
 }
