@@ -14,6 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
@@ -33,7 +34,8 @@
     "components/Circle.js",
     "app/[locale]/page.tsx",
     "components/homeWrapper/index.jsx",
-    "./public/dictionaries"
+    "./public/dictionaries",
+    ".next/server/*.js"
   ],
   "exclude": ["node_modules"]
 }

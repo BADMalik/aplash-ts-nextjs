@@ -7,7 +7,6 @@ import "@fontsource/work-sans/500.css";
 import "@fontsource/work-sans/700.css";
 import "@fontsource/unna/400.css";
 import "@fontsource/unna/700.css";
-import { useLocale } from "next-intl";
 
 // CSS Styles
 import "@/styles/clear.css";
