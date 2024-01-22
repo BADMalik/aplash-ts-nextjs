@@ -9,6 +9,7 @@ export const nextI18NextConfig = {
   // Path to the translation files
   // i.e., ./public/locales/en.json, ./public/locales/ch.json, etc.
   localePath: `${process.env.LAMBDA_TASK_ROOT}/public/dictionaries`,
+  outputFileTracing:true
 } as const;
 
 export type Locale = (typeof i18n)["locales"][number];
