@@ -23,9 +23,9 @@ import { i18n, type Locale } from "../../i18n-config";
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
+export const dynamic = "auto";
 
 // --------------
-export const dynamic = "auto";
 // Metadata of the website (used to inprove SEO of the website)
 export const metadata: Metadata = {
   title: "Pekko - Minimal Black Nextjs Template",
