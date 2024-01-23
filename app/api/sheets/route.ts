@@ -1,7 +1,8 @@
-import { google } from "googleapis";
+import { google, drive_v3 } from "googleapis";
 import { NextResponse, NextRequest } from "next/server";
 import { NextApiResponse } from "next";
 import { Readable } from "stream";
+type Base64 = string;
 export async function POST(request: NextRequest, res: NextApiResponse) {
   const formData = await request.formData();
   let payload = {
@@ -9,13 +10,22 @@ export async function POST(request: NextRequest, res: NextApiResponse) {
     email: formData.get("email"),
     subject: formData.get("subject"),
     message: formData.get("message"),
-    file: formData.get("file"),
+    file: formData.get("file") as unknown as File,
     projectPlan: formData.get("projectPlan"),
     launchDate: formData.get("launchDate"),
     budgetInfo: formData.get("budgetInfo"),
   };
-
+  let sheetData = [
+    payload?.name,
+    payload?.email,
+    payload?.message,
+    payload?.subject,
+    JSON.parse(payload?.budgetInfo as any)?.value,
+    JSON.parse(payload?.launchDate as any)?.value,
+    JSON.parse(payload?.projectPlan as any)?.value,
+  ];
   try {
+    let link = null;
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL,
@@ -32,53 +42,64 @@ export async function POST(request: NextRequest, res: NextApiResponse) {
       ],
     });
     const sheets = google.sheets({ auth, version: "v4" });
-    // if (payload.file) {
-    //   let fileName = payload.file?.name.split(".").pop();
-    //   console.log({ file: payload.file });
-    //   const service = google.drive({ version: "v3", auth });
-    //   const requestBody = {
-    //     name: payload.file?.name,
-    //     fields: "id",
-    //   };
-    //   const file = formData.get("file");
-    //   const fileBuffer = file?.buffer; // Ensure file buffer is not undefined
-
-    //   if (!fileBuffer) {
-    //     throw new Error("File buffer is undefined.");
-    //   }
-    //   const media = {
-    //     mimeType: payload.file.type,
-    //     body: Readable.from([payload?.file.buffer]),
-    //   };
-    //   const NewFile = await service.files.create({
-    //     requestBody,
-    //     media: media,
-    //   });
-    console.log("File Id:", payload?.budgetInfo?.valueOf());
+    const service = google.drive({ version: "v3", auth });
+    if (payload?.file) {
+      link = await handleGoogleDriveAPI(payload.file, service);
+    }
+    sheetData = [...sheetData, link ? link : "N/A"];
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.NEXT_PUBLIC_SPREADSHEET_ID,
-      range: "A1:G1",
+      range: "A1:H1",
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [
-          [
-            payload?.name,
-            payload?.email,
-            payload?.message,
-            payload?.subject,
-            JSON.parse(payload?.budgetInfo as any)?.value,
-            JSON.parse(payload?.launchDate as any)?.value,
-            JSON.parse(payload?.projectPlan as any)?.value,
-          ],
-        ],
+        values: [sheetData],
       },
     });
     return NextResponse.json({ data: response.data }, { status: 200 });
   } catch (e) {
-    // console.log({ error: e.message });
     return NextResponse.json(
       { message: "Something went wrong" },
       { status: 500 }
     );
   }
 }
+
+const handleGoogleDriveAPI = async (file: File, service: any) => {
+  try {
+    if (file) {
+      const fileMetadata = {
+        name: file.name,
+        fields: "id",
+        parents: [process.env.NEXT_PUBLIC_FOLDER_ID],
+      } as any;
+
+      const bytes = await file.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+
+      const media = {
+        mimeType: file.type,
+        body: Readable.from(buffer),
+      };
+
+      const NewFile = await service.files.create({
+        requestBody: fileMetadata,
+        media,
+      });
+      service.permissions.create({
+        requestBody: {
+          role: "reader",
+          type: "anyone",
+        },
+        fileId: NewFile.data.id!,
+        fields: "id",
+      });
+      const result = await service.files.get({
+        fileId: NewFile.data.id!,
+        fields: "webViewLink",
+      });
+      return result?.data?.webViewLink ? result?.data?.webViewLink : null;
+    }
+  } catch (e) {
+    throw e;
+  }
+};

@@ -7,15 +7,13 @@ import japanese from "@/assets/images/flags/japanese.jpg";
 import english from "@/assets/images/flags/english.jpg";
 import chinese from "@/assets/images/flags/chinese.jpg";
 import korean from "@/assets/images/flags/korean.jpg";
-
 import * as yup from "yup";
 import contactImg from "@/assets/images/contact1.jpg";
 import { useForm, Controller } from "react-hook-form";
 // -----------
 import { useState } from "react";
-import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
-// to handle sending form message
+import FlagComponent from "../flagWrapper";
 type formType = {
   file?: any;
 };
@@ -45,12 +43,6 @@ function bytesToSize(bytes: any, decimals = 2) {
   }`;
 }
 
-type formDataType = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
 const SUPPORTED_FORMATS = [
   // Images
   "image/jpeg",
@@ -155,10 +147,8 @@ const Contact = ({ dictionary }: { dictionary: any }) => {
     if (formData?.file) {
       form.append("file", formData?.file);
     }
-    // for (const key in form) {
-    //   console.log(`${key}: ${e[key]}`);
-    // }
-    const response = await fetch("/api/sheets", {
+
+    await fetch("/api/sheets", {
       method: "POST",
       body: form,
     });
@@ -195,28 +185,7 @@ const Contact = ({ dictionary }: { dictionary: any }) => {
               <span>Language</span>
               <div>
                 <div className="flag-wrapper">
-                  <ul>
-                    <li>
-                      <a>
-                        <img src={japanese.src} alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <img src={english.src} alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <img src={chinese.src} alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <img src={korean.src} alt="" />
-                      </a>
-                    </li>
-                  </ul>
+                  <FlagComponent pageName="contact" />
                 </div>
               </div>
             </p>
@@ -224,224 +193,235 @@ const Contact = ({ dictionary }: { dictionary: any }) => {
           </div>
 
           <div className="one_half last">
-            <form className="contact-form" onSubmit={handleSubmit(handleForm)}>
-              <p>
-                <Controller
-                  name={"projectPlan"} // for the gender field
-                  control={control} // obtained from the useForm hook
-                  render={({ field }) => {
-                    return (
-                      <Dropdown
-                        placeholder={dictionary["contact"].choose_option}
-                        options={[
-                          {
-                            label: `${dictionary["contact"].projectPlan_yes}`,
-                            value: `${dictionary["contact"].projectPlan_yes}`,
-                          },
-                          {
-                            label: `${dictionary["contact"].projectPlan_no}`,
-                            value: `${dictionary["contact"].projectPlan_no}`,
-                          },
-                          {
-                            label: `${dictionary["contact"].projectPlan_you}`,
-                            value: `${dictionary["contact"].projectPlan_you}`,
-                          },
-                          {
-                            label: `${dictionary["contact"].not_sure}`,
-                            value: `${dictionary["contact"].not_sure}`,
-                          },
-                        ]}
-                        {...field}
-                        baseClassName="base-select-contact"
-                        className="select-contact"
-                      />
-                    );
-                  }}
-                />
-
-                <div className="text-danger">
-                  {" "}
-                  {errors?.projectPlan?.label?.message?.toString()}
-                </div>
-              </p>
-              <p>
-                <Controller
-                  name={"launchDate"} // for the gender field
-                  control={control} // obtained from the useForm hook
-                  render={({ field }) => {
-                    return (
-                      <Dropdown
-                        placeholder={dictionary["contact"].launch_date}
-                        options={[
-                          {
-                            label: `${dictionary["contact"].after} 3 ${dictionary["contact"].months}`,
-                            value: `${dictionary["contact"].after} 3 ${dictionary["contact"].months}`,
-                          },
-
-                          {
-                            label: `${dictionary["contact"].after} 6 ${dictionary["contact"].months}`,
-                            value: `${dictionary["contact"].after} 6 ${dictionary["contact"].months}`,
-                          },
-
-                          {
-                            label: `${dictionary["contact"].after} 9 ${dictionary["contact"].months}`,
-                            value: `${dictionary["contact"].after} 9 ${dictionary["contact"].months}`,
-                          },
-
-                          {
-                            label: `${dictionary["contact"].not_sure}`,
-                            value: `${dictionary["contact"].not_sure}`,
-                          },
-                        ]}
-                        {...field}
-                        baseClassName="base-select-contact"
-                        className="select-contact"
-                      />
-                    );
-                  }}
-                />
-
-                <div className="text-danger">
-                  {errors?.launchDate?.label?.message?.toString()}
-                </div>
-              </p>
-
-              <div>
-                <Controller
-                  name={"budgetInfo"} // for the gender field
-                  control={control} // obtained from the useForm hook
-                  render={({ field }) => {
-                    return (
-                      <Dropdown
-                        placeholder={dictionary["contact"].budget}
-                        noOptionsDisplay={dictionary["contact"].budget}
-                        options={[
-                          {
-                            label: `${dictionary["contact"].under} 1000`,
-                            value: `${dictionary["contact"].under} 1000`,
-                          },
-                          {
-                            label: `1,000 - 5,000 USD`,
-                            value: `1,000 - 5,000 USD`,
-                          },
-                          {
-                            label: `5,000 - 10,000 USD`,
-                            value: `5,000 - 10,000 USD`,
-                          },
-
-                          {
-                            label: `${dictionary["contact"].not_sure}`,
-                            value: `${dictionary["contact"].not_sure}`,
-                          },
-                        ]}
-                        {...field}
-                        baseClassName="base-select-contact"
-                        className="select-contact"
-                      />
-                    );
-                  }}
-                />
-
-                <div className="text-danger">
-                  {errors?.budgetInfo?.label?.message?.toString()}
-                </div>
-              </div>
-
-              <p>
-                <input
-                  disabled={disabled}
-                  id="name"
-                  type="text"
-                  placeholder="Name"
-                  {...register("name")}
-                />
-
-                <div className="text-danger">
-                  {errors?.name?.message?.toString()}
-                </div>
-              </p>
-
-              <p>
-                <input
-                  disabled={disabled}
-                  {...register("email")}
-                  id="contact-email"
-                  type="email"
-                  name="email"
-                  placeholder="E-Mail"
-                />
-
-                <div className="text-danger">
-                  {errors?.email?.message?.toString()}
-                </div>
-              </p>
-
-              <div>
-                <input
-                  disabled={disabled}
-                  id="subject"
-                  type="text"
-                  {...register("subject")}
-                  placeholder="Project Title"
-                />
-
-                <div className="text-danger">
-                  {errors?.subject?.message?.toString()}
-                </div>
-              </div>
-              <div>
-                <textarea
-                  disabled={disabled}
-                  id="message"
-                  placeholder="Project Description"
-                  {...register("message")}
-                ></textarea>
-
-                <div className="text-danger">
-                  {errors?.message?.message?.toString()}
-                </div>
-              </div>
-              <div>
-                <label htmlFor="upload" className="file-upload-label">
-                  <FaPaperclip size={60} />
-                  <input
-                    disabled={disabled}
-                    type="file"
-                    id="upload"
-                    multiple={false}
-                    style={{ display: "none" }} // Hide the actual file input
-                    {...register("file")}
-                    onChange={(e: any) => {
-                      setFormData({ ...formData, file: e.target.files[0] });
-                      clearErrors("file");
+            {!disabled ? (
+              <form
+                className="contact-form"
+                onSubmit={handleSubmit(handleForm)}
+              >
+                <p>
+                  <Controller
+                    name={"projectPlan"} // for the gender field
+                    control={control} // obtained from the useForm hook
+                    render={({ field }) => {
+                      return (
+                        <Dropdown
+                          placeholder={dictionary["contact"].choose_option}
+                          options={[
+                            {
+                              label: `${dictionary["contact"].projectPlan_yes}`,
+                              value: `${dictionary["contact"].projectPlan_yes}`,
+                            },
+                            {
+                              label: `${dictionary["contact"].projectPlan_no}`,
+                              value: `${dictionary["contact"].projectPlan_no}`,
+                            },
+                            {
+                              label: `${dictionary["contact"].projectPlan_you}`,
+                              value: `${dictionary["contact"].projectPlan_you}`,
+                            },
+                            {
+                              label: `${dictionary["contact"].not_sure}`,
+                              value: `${dictionary["contact"].not_sure}`,
+                            },
+                          ]}
+                          {...field}
+                          baseClassName="base-select-contact"
+                          className="select-contact"
+                        />
+                      );
                     }}
                   />
-                </label>
-                {formData?.file && (
-                  <ul className="file-list">
-                    <li className="file-list-item">
-                      <strong>{formData?.file?.name}</strong> -{" "}
-                      {bytesToSize(formData?.file?.size)}.{" "}
-                      <button
-                        className="file-upload-remove"
-                        onClick={() => {
-                          reset({ ...getValues(), file: null });
-                          setFormData({});
-                        }}
-                      >
-                        Remove
-                      </button>
-                    </li>
-                  </ul>
-                )}
+
+                  <div className="text-danger">
+                    {" "}
+                    {errors?.projectPlan?.label?.message?.toString()}
+                  </div>
+                </p>
+                <p>
+                  <Controller
+                    name={"launchDate"} // for the gender field
+                    control={control} // obtained from the useForm hook
+                    render={({ field }) => {
+                      return (
+                        <Dropdown
+                          placeholder={dictionary["contact"].launch_date}
+                          options={[
+                            {
+                              label: `${dictionary["contact"].after} 3 ${dictionary["contact"].months}`,
+                              value: `${dictionary["contact"].after} 3 ${dictionary["contact"].months}`,
+                            },
+
+                            {
+                              label: `${dictionary["contact"].after} 6 ${dictionary["contact"].months}`,
+                              value: `${dictionary["contact"].after} 6 ${dictionary["contact"].months}`,
+                            },
+
+                            {
+                              label: `${dictionary["contact"].after} 9 ${dictionary["contact"].months}`,
+                              value: `${dictionary["contact"].after} 9 ${dictionary["contact"].months}`,
+                            },
+
+                            {
+                              label: `${dictionary["contact"].not_sure}`,
+                              value: `${dictionary["contact"].not_sure}`,
+                            },
+                          ]}
+                          {...field}
+                          baseClassName="base-select-contact"
+                          className="select-contact"
+                        />
+                      );
+                    }}
+                  />
+
+                  <div className="text-danger">
+                    {errors?.launchDate?.label?.message?.toString()}
+                  </div>
+                </p>
+
+                <div>
+                  <Controller
+                    name={"budgetInfo"} // for the gender field
+                    control={control} // obtained from the useForm hook
+                    render={({ field }) => {
+                      return (
+                        <Dropdown
+                          placeholder={dictionary["contact"].budget}
+                          noOptionsDisplay={dictionary["contact"].budget}
+                          options={[
+                            {
+                              label: `${dictionary["contact"].under} 1000`,
+                              value: `${dictionary["contact"].under} 1000`,
+                            },
+                            {
+                              label: `1,000 - 5,000 USD`,
+                              value: `1,000 - 5,000 USD`,
+                            },
+                            {
+                              label: `5,000 - 10,000 USD`,
+                              value: `5,000 - 10,000 USD`,
+                            },
+
+                            {
+                              label: `${dictionary["contact"].not_sure}`,
+                              value: `${dictionary["contact"].not_sure}`,
+                            },
+                          ]}
+                          {...field}
+                          baseClassName="base-select-contact"
+                          className="select-contact"
+                        />
+                      );
+                    }}
+                  />
+
+                  <div className="text-danger">
+                    {errors?.budgetInfo?.label?.message?.toString()}
+                  </div>
+                </div>
+
+                <p>
+                  <input
+                    disabled={disabled}
+                    id="name"
+                    type="text"
+                    placeholder="Name"
+                    {...register("name")}
+                  />
+
+                  <div className="text-danger">
+                    {errors?.name?.message?.toString()}
+                  </div>
+                </p>
+
+                <p>
+                  <input
+                    disabled={disabled}
+                    {...register("email")}
+                    id="contact-email"
+                    type="email"
+                    name="email"
+                    placeholder="E-Mail"
+                  />
+
+                  <div className="text-danger">
+                    {errors?.email?.message?.toString()}
+                  </div>
+                </p>
+
+                <div>
+                  <input
+                    disabled={disabled}
+                    id="subject"
+                    type="text"
+                    {...register("subject")}
+                    placeholder="Project Title"
+                  />
+
+                  <div className="text-danger">
+                    {errors?.subject?.message?.toString()}
+                  </div>
+                </div>
+                <div>
+                  <textarea
+                    disabled={disabled}
+                    id="message"
+                    placeholder="Project Description"
+                    {...register("message")}
+                  ></textarea>
+
+                  <div className="text-danger">
+                    {errors?.message?.message?.toString()}
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="upload" className="file-upload-label">
+                    <FaPaperclip size={60} />
+                    <input
+                      disabled={disabled}
+                      type="file"
+                      id="upload"
+                      multiple={false}
+                      style={{ display: "none" }}
+                      {...register("file")}
+                      onChange={(e: any) => {
+                        setFormData({ ...formData, file: e.target.files[0] });
+                        clearErrors("file");
+                      }}
+                    />
+                  </label>
+                  {formData?.file && (
+                    <ul className="file-list">
+                      <li className="file-list-item">
+                        <strong>{formData?.file?.name}</strong> -{" "}
+                        {bytesToSize(formData?.file?.size)}.{" "}
+                        <button
+                          className="file-upload-remove text-danger"
+                          onClick={() => {
+                            reset({ ...getValues(), file: null });
+                            setFormData({});
+                          }}
+                        >
+                          Remove
+                        </button>
+                      </li>
+                    </ul>
+                  )}
+                </div>
+                <div className="text-danger">
+                  {errors?.file?.message?.toString()}
+                </div>
+                <p className="contact-submit-holder">
+                  <input disabled={disabled} type="submit" value="Send" />
+                </p>
+              </form>
+            ) : (
+              <div className="loader-holder">
+                <div className="loader-box">
+                  <div className="loader"></div>
+                </div>
               </div>
-              <div className="text-danger">
-                {errors?.file?.message?.toString()}
-              </div>
-              <p className="contact-submit-holder">
-                <input type="submit" value="Send" />
-              </p>
-            </form>
+            )}
           </div>
           <div className="clear"></div>
         </div>

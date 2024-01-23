@@ -7,6 +7,7 @@ import japanese from "@/assets/images/flags/japanese.jpg";
 import english from "@/assets/images/flags/english.jpg";
 import chinese from "@/assets/images/flags/chinese.jpg";
 import korean from "@/assets/images/flags/korean.jpg";
+import FlagComponent from "@/components/flagWrapper";
 // ------------
 export const dynamic = "force-dynamic";
 const About = async ({ params: { lang } }: { params: { lang: Locale } }) => {
@@ -99,28 +100,7 @@ const About = async ({ params: { lang } }: { params: { lang: Locale } }) => {
           </div>
           <div className="clear"></div>
           <div className="flag-wrapper center-text top-60">
-            <ul>
-              <li>
-                <a>
-                  <img src={japanese.src} alt="" />
-                </a>
-              </li>
-              <li>
-                <a>
-                  <img src={english.src} alt="" />
-                </a>
-              </li>
-              <li>
-                <a>
-                  <img src={chinese.src} alt="" />
-                </a>
-              </li>
-              <li>
-                <a>
-                  <img src={korean.src} alt="" />
-                </a>
-              </li>
-            </ul>
+            <FlagComponent pageName="about" />
           </div>
         </div>
       </div>

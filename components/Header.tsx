@@ -11,16 +11,14 @@ import japanese from "@/assets/images/flags/japanese.jpg";
 import english from "@/assets/images/flags/english.jpg";
 import chinese from "@/assets/images/flags/chinese.jpg";
 import korean from "@/assets/images/flags/korean.jpg";
+import FlagComponent from "./flagWrapper";
 // import { useRouter } from "next/router";
 // --------------
 
 const Header = ({ dictionary }: { dictionary: any }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const locale = useLocale();
-  // const router = useRouter();
-  // const data = router.locale;
-  // console.log({ data });
-  console.log("inside server", locale);
+
   const pathname: string = usePathname();
 
   const toggleNav = () => {
@@ -75,7 +73,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
                     <span className="menu-num">01</span>
                     <Link
                       locale={false}
-                      href={`/`}
+                      href={`/${locale}`}
                       className={pathname === `/` ? "current" : ""}
                       onClick={handleCloseMenu}
                     >
@@ -85,7 +83,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
                   <li>
                     <span className="menu-num">02</span>
                     <Link
-                      href={`/about`}
+                      href={`/${locale}/about`}
                       locale={false}
                       className={pathname === `/about/` ? "current" : ""}
                       onClick={handleCloseMenu}
@@ -96,7 +94,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
                   <li>
                     <span className="menu-num">03</span>
                     <Link
-                      href={`/services`}
+                      href={`/${locale}/services`}
                       locale={false}
                       className={pathname === `/services/` ? "current" : ""}
                       onClick={handleCloseMenu}
@@ -107,7 +105,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
                   <li>
                     <span className="menu-num">04</span>
                     <Link
-                      href={`/contact`}
+                      href={`/${locale}/contact`}
                       locale={false}
                       className={pathname === `/contact/` ? "current" : ""}
                       onClick={handleCloseMenu}
@@ -136,28 +134,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
                 <div>
                   <p className="menu-text-title">Language</p>
                   <div className="flag-wrapper">
-                    <ul>
-                      <li>
-                        <a>
-                          <img src={japanese.src} alt="" />
-                        </a>
-                      </li>
-                      <li>
-                        <a>
-                          <img src={english.src} alt="" />
-                        </a>
-                      </li>
-                      <li>
-                        <a>
-                          <img src={chinese.src} alt="" />
-                        </a>
-                      </li>
-                      <li>
-                        <a>
-                          <img src={korean.src} alt="" />
-                        </a>
-                      </li>
-                    </ul>
+                    <FlagComponent pageName={null} />
                   </div>
                 </div>
               </div>
