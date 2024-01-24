@@ -1,4 +1,3 @@
-
 {
   "about": {
     "aboutTitle": "在创新的想法",
@@ -35,7 +34,9 @@
     "title": "APLASH OFFICIAL",
     "paragraph": "UNLIMITED CHOICES",
     "body1": "SIMPLE IDEA   BEST SOLUTIONS",
-    "body2": "CHOOSE US"
+    "body2": "CHOOSE US",
+    "send": "发送",
+    "remove": "删除"
   },
   "shared": {
     "landing_title": "당신만을 위한, 아름다운 웹을 만듭니다",
@@ -60,5 +61,34 @@
     "Contact_text2": "텍스트2",
     "process": "Process",
     "Language": "Language"
+  },
+  "validation": {
+    "email": "请输入有效的电子邮件地址。",
+    "required": "此项为必填项",
+    "invalidFile": "此项为必填项。",
+    "uploadSize": "允许小于20MB的文件。"
+  },
+  "contact": {
+    "choose_option": "您是否有项目计划？",
+    "projectPlan_yes": "是的，我有一个",
+    "projectPlan_no": "没有，我没有一个",
+    "projectPlan_you": "我们将要求您负责此事",
+    "launch_date": "选择您的上线日期",
+    "asap": "尽快",
+    "after": "之后",
+    "months": "月",
+    "budget": "选择您的预算",
+    "under": "在以下",
+    "over": "在以上",
+    "usd": "美元",
+    "title": "项目标题",
+    "desc": "项目描述",
+    "not_sure": "我不确定"
+  },
+  "placeHolders": {
+    "name": "姓名",
+    "email": "电子邮件",
+    "pTitle": "项目标题",
+    "pDes": "项目描述"
   }
 }

@@ -36,7 +36,6 @@ export async function POST(request: Request, res: NextApiResponse) {
       requestBody,
       media: media,
     });
-    console.log("File Id:", file.data.id);
     return file.data.id;
   } catch (err) {
     // TODO(developer) - Handle error

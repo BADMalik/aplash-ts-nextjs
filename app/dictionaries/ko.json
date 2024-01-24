@@ -26,7 +26,9 @@
     "title": "APLASH OFFICIAL",
     "paragraph": "UNLIMITED CHOICES",
     "body1": "SIMPLE IDEA   BEST SOLUTIONS",
-    "body2": "CHOOSE US"
+    "body2": "CHOOSE US",
+    "send": "보내기",
+    "remove": "제거"
   },
   "shared": {
     "landing_title": "당신만을 위한, 아름다운 웹을 만듭니다",
@@ -59,5 +61,34 @@
     "development2": "원하는 형태의 웹, 앱개발",
     "marketing1": "맞춤형 마케팅",
     "marketing2": "제작에서만 끝나는게 아닌, 마케팅까지의 통합 솔루션"
+  },
+  "validation": {
+    "email": "유효한 이메일 주소를 입력하세요.",
+    "required": "필드는 필수입니다 (",
+    "invalidFile": "필드는 필수입니다.",
+    "uploadSize": "20MB 이하의 파일만 허용됩니다."
+  },
+  "contact": {
+    "choose_option": "프로젝트 계획이 있나요?",
+    "projectPlan_yes": "예, 있습니다",
+    "projectPlan_no": "아니요, 없습니다",
+    "projectPlan_you": "당신에게 맡길 것입니다",
+    "launch_date": "출시 날짜 선택",
+    "asap": "빨리",
+    "after": "후에",
+    "months": "개월",
+    "budget": "예산 선택",
+    "under": "이하",
+    "over": "이상",
+    "usd": "미국 달러",
+    "title": "프로젝트 제목",
+    "desc": "프로젝트 설명",
+    "not_sure": "확실하지 않아요"
+  },
+  "placeHolders": {
+    "name": "이름",
+    "email": "이메일",
+    "pTitle": "프로젝트 제목",
+    "pDes": "프로젝트 설명"
   }
 }

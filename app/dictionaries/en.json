@@ -1,4 +1,10 @@
 {
+  "placeHolders": {
+    "name": "Name",
+    "email:": "Email",
+    "pTitle": "Project Title",
+    "pDes": "Project Description"
+  },
   "about": {
     "aboutTitle": "남들과는 다르게",
     "aboutTitle1": "고객님의 상상을 실현합니다",
@@ -43,6 +49,7 @@
     "desc": "Project Description",
     "not_sure": "I am not sure"
   },
+
   "index": {
     "brand1": "Brand Identity",
     "brand2": "We build special logos and brands",
@@ -59,7 +66,8 @@
     "Name": "Name",
     "Subject": "Subject",
     "Message": "Message",
-    "SEND": "Send"
+    "send": "Send",
+    "remove":"Remove"
   },
   "pagination": { "previous": "&laquo; Previous", "next": "Next &raquo;" },
   "passwords": {
@@ -83,14 +91,14 @@
     "PHONE": "Phone",
     "LOCATION": "Location",
     "aplashEmail": "support@aplash.dev",
-    "address": "Gangnam Daero 69 Gil 8 10F, Seoul",
+    "address": "ROOM 1006, 10/F. PO YIP BUILDING 23 HING YIP STREET KWUN TONG,KOWLOON, HONG KONG",
     "PROJECT": "Project",
     "CLIENT": "Client",
     "DATE": "Date",
     "Techs": "Techs",
     "contact_message": "Easy, Powerful web starts from here.",
-    "Contact_text1": "텍스트1",
-    "Contact_text2": "텍스트2",
+    "Contact_text1": "We welcome your preferences and requirements.",
+    "Contact_text2": "The more detailed your requirements, the more precise consultation we can provide.",
     "services": "Services",
     "process": "Process",
     "Language": "Language"
@@ -173,8 +181,8 @@
       "string": "The :attribute must be at least :min characters.",
       "array": "The :attribute must have at least :min items."
     },
-"uploadSize" : "Files less than 20MBs are allowed",
-"invalidFile": "Only Images, PDF, docs, excels, ppt are allowed.",
+    "uploadSize": "Files less than 20MBs are allowed",
+    "invalidFile": "Only Images, PDF, docs, excels, ppt are allowed.",
     "not_in": "The selected :attribute is invalid.",
     "not_regex": "The :attribute format is invalid.",
     "numeric": "The :attribute must be a number.",

@@ -19,6 +19,7 @@ import "@/styles/our-styles.css";
 import type { Metadata } from "next";
 
 import { i18n, type Locale } from "../../i18n-config";
+import React from "react";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -28,14 +29,19 @@ export const dynamic = "force-dynamic";
 // --------------
 // Metadata of the website (used to inprove SEO of the website)
 export const metadata: Metadata = {
-  title: "Pekko - Minimal Black Nextjs Template",
-  description: "Template by CocoBasic",
-  keywords: ["HTML", "CSS", "Javascript", "Typescript", "React", "nextjs"],
-  authors: [
-    {
-      name: "Cocobasic",
-      url: "https://www.cocobasic.com/",
-    },
+  title: "Aplash - Your imagination becomes own web",
+  description: "상상이 실현이 되는 웹 제작회사, 맞춤형 웹 제작.",
+  icons: { icon: "/icon.png" },
+  keywords: [
+    "웹제작",
+    "웹사이트",
+    "웹사이트제작",
+    "커스텀웹제작",
+    "맞춤형 웹제작",
+    "ウェブ制作",
+    "创建网站",
+    "カスタムウェブ",
+    "Custom web",
   ],
 };
 

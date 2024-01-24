@@ -3,10 +3,6 @@ import React from "react";
 import { Dropdown } from "react-dropdown-now";
 import { FaPaperclip } from "react-icons/fa";
 import "react-dropdown-now/style.css";
-import japanese from "@/assets/images/flags/japanese.jpg";
-import english from "@/assets/images/flags/english.jpg";
-import chinese from "@/assets/images/flags/chinese.jpg";
-import korean from "@/assets/images/flags/korean.jpg";
 import * as yup from "yup";
 import contactImg from "@/assets/images/contact1.jpg";
 import { useForm, Controller } from "react-hook-form";
@@ -154,35 +150,31 @@ const Contact = ({ dictionary }: { dictionary: any }) => {
     });
     window.location.reload();
   };
+  console.log({ dictionary: dictionary["shared"] });
   return (
     <main className="page-background">
       <div id="content" className="site-content">
         <div className="content-holder center-relative content-1170">
           <h1 className="entry-title page-title center-text">
-            Stay in touch with as
+            {dictionary["shared"].contact_message}
           </h1>
 
           <img className="page-featured-image" src={contactImg.src} alt="" />
 
           <div className="one_half">
-            <p>
-              Bearable only through love hydrogen atoms bits of moving fluff
-              culture shores of the cosmic ocean paroxysm of global death rich
-              in heavy atoms with pretty stories for which there’s little good
-              evidence something incredible is waiting to be known not a sunrise
-              but a galaxyrise shores of the cosmic ocean inconspicuous motes.
-            </p>
+            <p>{dictionary["shared"].Contact_text1}</p>
             <br />
-            <p>
-              Galaxies network of wormholes birth extraplanetary Apollonius of
-              Perga adipisci velit! Muse about descended from astronomers.
-            </p>
+            <p>{dictionary["shared"].Contact_text2}</p>
             <br />
             <p className="my-info">
-              <span>Address:</span> New York, NY, United States <br />
-              <span>Phone:</span> +1 234-567-890 <br />
-              <span>Hours:</span> 6:00 am – 2:00 am <br /> <br />
-              <span>Language</span>
+              <span>{dictionary["shared"].Address}:</span>
+              {dictionary["shared"].address}
+              <br /> <span>{dictionary["shared"].Hours}</span> 6:00 am – 2:00 am
+              <br />
+              <span>{dictionary["shared"].EMAIL}: </span>{" "}
+              {dictionary["shared"].aplashEmail}
+              <br />
+              <span>{dictionary["shared"].Language}</span>
               <div>
                 <div className="flag-wrapper">
                   <FlagComponent pageName="contact" />
@@ -325,7 +317,7 @@ const Contact = ({ dictionary }: { dictionary: any }) => {
                     disabled={disabled}
                     id="name"
                     type="text"
-                    placeholder="Name"
+                    placeholder={dictionary["placeHolders"].name}
                     {...register("name")}
                   />
 
@@ -341,7 +333,7 @@ const Contact = ({ dictionary }: { dictionary: any }) => {
                     id="contact-email"
                     type="email"
                     name="email"
-                    placeholder="E-Mail"
+                    placeholder={dictionary["placeHolders"].email}
                   />
 
                   <div className="text-danger">
@@ -355,7 +347,7 @@ const Contact = ({ dictionary }: { dictionary: any }) => {
                     id="subject"
                     type="text"
                     {...register("subject")}
-                    placeholder="Project Title"
+                    placeholder={dictionary["placeHolders"].pTitle}
                   />
 
                   <div className="text-danger">
@@ -366,7 +358,7 @@ const Contact = ({ dictionary }: { dictionary: any }) => {
                   <textarea
                     disabled={disabled}
                     id="message"
-                    placeholder="Project Description"
+                    placeholder={dictionary["placeHolders"].pDes}
                     {...register("message")}
                   ></textarea>
 
@@ -402,7 +394,7 @@ const Contact = ({ dictionary }: { dictionary: any }) => {
                             setFormData({});
                           }}
                         >
-                          Remove
+                          {dictionary["messages"].remove}
                         </button>
                       </li>
                     </ul>
@@ -412,7 +404,11 @@ const Contact = ({ dictionary }: { dictionary: any }) => {
                   {errors?.file?.message?.toString()}
                 </div>
                 <p className="contact-submit-holder">
-                  <input disabled={disabled} type="submit" value="Send" />
+                  <input
+                    disabled={disabled}
+                    type="submit"
+                    value={dictionary["messages"].send}
+                  />
                 </p>
               </form>
             ) : (

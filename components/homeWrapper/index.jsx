@@ -1,27 +1,27 @@
-'use client';
-import dynamic from 'next/dynamic';
-import anime from 'animejs';
-import 'reactjs-popup/dist/index.css';
-const ScrambleComponentNoSSR = dynamic(() => import('../scramble'), {
+"use client";
+import dynamic from "next/dynamic";
+import anime from "animejs";
+import "reactjs-popup/dist/index.css";
+const ScrambleComponentNoSSR = dynamic(() => import("../scramble"), {
   ssr: false,
 });
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect } from "react";
 
 const Home = ({ dictionary }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    var c = document.getElementById('c');
-    var ctx = c.getContext('2d');
+    var c = document.getElementById("c");
+    var ctx = c.getContext("2d");
     var cH;
     var cW;
-    var bgColor = '#ffffff';
+    var bgColor = "#ffffff";
     var animations = [];
     var circles = [];
 
     var colorPicker = (function () {
-      var colors = ['#e1e8f6', '#FFFFFF', '#f0d7b2', '#b7e2db'];
-      var txt_colors = ['#3c4759', '#000000', '#56534d', '#3e5f59'];
+      var colors = ["#e1e8f6", "#FFFFFF", "#f0d7b2", "#b7e2db"];
+      var txt_colors = ["#3c4759", "#000000", "#56534d", "#3e5f59"];
       var index = 0;
       function next() {
         index = index++ < colors.length - 1 ? index : 0;
@@ -52,14 +52,14 @@ const Home = ({ dictionary }) => {
     }
 
     function addClickListeners() {
-      document.getElementById('c').addEventListener('touchstart', handleEvent);
+      document.getElementById("c").addEventListener("touchstart", handleEvent);
       // document.getElementById('c').addEventListener("mousedown", handleEvent);
-      document.getElementById('c').addEventListener('click', handleEvent);
+      document.getElementById("c").addEventListener("click", handleEvent);
     }
 
     function handleEvent(e) {
-      let randX = getRandom('x');
-      let randY = getRandom('y');
+      let randX = getRandom("x");
+      let randY = getRandom("y");
 
       if (e.touches) {
         e.preventDefault();
@@ -70,10 +70,6 @@ const Home = ({ dictionary }) => {
       var targetR = calcPageFillRadius(randX, randY);
       var rippleSize = Math.min(200, cW * 0.4);
       var minCoverDuration = 750;
-      // jQuery('.text-stroke-2').css('stroke', colorPicker.current_txt());
-      //   jQuery(".text").css("color", colorPicker.current_txt());
-      console.log(randX, ' : ', e.pageX);
-      console.log(randY, ' : ', e.pageY);
 
       var pageFill = new Circle({
         x: randX,
@@ -85,11 +81,10 @@ const Home = ({ dictionary }) => {
         targets: pageFill,
         r: targetR,
         duration: Math.max(targetR / 2, minCoverDuration),
-        easing: 'easeOutQuart',
+        easing: "easeOutQuart",
         complete: function () {
           bgColor = pageFill.fill;
           removeAnimation(fillAnimation);
-          // console.log('colorPicker.current_txt() : ', colorPicker.current_txt(), " : " , currentColor);
         },
       });
 
@@ -108,7 +103,7 @@ const Home = ({ dictionary }) => {
         targets: ripple,
         r: rippleSize,
         opacity: 0,
-        easing: 'easeOutExpo',
+        easing: "easeOutExpo",
         duration: 900,
         complete: removeAnimation,
       });
@@ -134,7 +129,7 @@ const Home = ({ dictionary }) => {
           );
         },
         r: 0,
-        easing: 'easeOutExpo',
+        easing: "easeOutExpo",
         duration: anime.random(2000, 4300),
         complete: removeAnimation,
       });
@@ -197,7 +192,7 @@ const Home = ({ dictionary }) => {
       if (window.CP) {
         window.CP.PenTimer.MAX_TIME_IN_LOOP_WO_EXIT = 6000;
       }
-      window.addEventListener('resize', resizeCanvas);
+      window.addEventListener("resize", resizeCanvas);
       addClickListeners();
       if (!!window.location.pathname.match(/fullcpgrid/)) {
         // startFauxClicking();
@@ -212,12 +207,12 @@ const Home = ({ dictionary }) => {
 
       function clearInactiveTimeout() {
         clearTimeout(inactive);
-        document.removeEventListener('mousedown', clearInactiveTimeout);
-        document.removeEventListener('touchstart', clearInactiveTimeout);
+        document.removeEventListener("mousedown", clearInactiveTimeout);
+        document.removeEventListener("touchstart", clearInactiveTimeout);
       }
 
-      document.addEventListener('mousedown', clearInactiveTimeout);
-      document.addEventListener('touchstart', clearInactiveTimeout);
+      document.addEventListener("mousedown", clearInactiveTimeout);
+      document.addEventListener("touchstart", clearInactiveTimeout);
     }
 
     function startFauxClicking() {
@@ -231,7 +226,7 @@ const Home = ({ dictionary }) => {
     }
 
     function fauxClick(x, y) {
-      var fauxClick = new Event('mousedown');
+      var fauxClick = new Event("mousedown");
       fauxClick.pageX = x;
       fauxClick.pageY = y;
       document.dispatchEvent(fauxClick);
@@ -244,16 +239,11 @@ const Home = ({ dictionary }) => {
 
     function getRandom(which) {
       console.clear();
-      console.log(
-        'Your screen resolution is: ' +
-          window.screen.width * window.devicePixelRatio +
-          ' x ' +
-          window.screen.height * window.devicePixelRatio
-      );
+
       var screenHeight = window.screen.height * window.devicePixelRatio;
       var screenWidth = window.screen.width * window.devicePixelRatio;
       var random = 0;
-      if (which == 'y') {
+      if (which == "y") {
         random =
           screenHeight < screenWidth ? parseInt(screenHeight) * 0.8 : 500;
       } else {
@@ -266,8 +256,8 @@ const Home = ({ dictionary }) => {
       // clearInterval(scrambleInterval);
       // window.removeEventListener("resize", handleResize);
       clearInterval(intervalId);
-      window.removeEventListener('touchstart', handleEvent);
-      window.removeEventListener('click', handleEvent);
+      window.removeEventListener("touchstart", handleEvent);
+      window.removeEventListener("click", handleEvent);
     };
   }, []);
   return (
@@ -275,7 +265,7 @@ const Home = ({ dictionary }) => {
       <main
         className="page-background"
         style={{
-          position: 'relative',
+          position: "relative",
         }}
       >
         <canvas ref={canvasRef} id="c" />

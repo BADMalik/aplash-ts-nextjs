@@ -34,7 +34,9 @@
     "title": "クリエーティビティこそ、トレントです",
     "paragraph": "あなただけのウェブ・アプリを",
     "body1": "夢と共に広がります",
-    "body2": "Ａｐｌａｓｈ　Ｏｆｆｉｃｉａｌ"
+    "body2": "Ａｐｌａｓｈ　Ｏｆｆｉｃｉａｌ",
+    "send": "送信",
+    "remove": "削除"
   },
   "shared": {
     "landing_title": "당신만을 위한, 아름다운 웹을 만듭니다",
@@ -61,19 +63,32 @@
     "Language": "Language"
   },
   "contact": {
-    "choose_option": "Do you have a project plan?",
-    "projectPlan_yes": "Yes, I do have one",
-    "projectPlan_no": "No, I do not have one",
-    "projectPlan_you": "We will ask you to take care of it",
-    "launch_date": "Choose your launch date Japanese",
-    "asap": "As soon as possible",
-    "after": "After",
-    "months": "Months",
-    "budget": "Choose your budget",
-    "under": "Under",
-    "over": "Over",
-    "usd": "USD",
-    "title": "Project Title",
-    "desc": "Project Description"
+    "choose_option": "プロジェクト計画はありますか？",
+    "projectPlan_yes": "はい、あります",
+    "projectPlan_no": "いいえ、ありません",
+    "projectPlan_you": "お願いします",
+    "launch_date": "起動日を選択してください",
+    "asap": "できるだけ早く",
+    "after": "のち",
+    "months": "ヶ月",
+    "budget": "予算を選択してください",
+    "under": "未満",
+    "over": "以上",
+    "usd": "米ドル",
+    "title": "プロジェクトのタイトル",
+    "desc": "プロジェクトの説明",
+    "not_sure": "わかりません"
+  },
+  "validation": {
+    "email": "有効なメールアドレスを入力してください。",
+    "required": "この項目は必須です",
+    "invalidFile": "画像、PDF、ドキュメント、エクセル、PPTのみが許可されています。",
+    "uploadSize": "允许小于20MB的文件。"
+  },
+  "placeHolders": {
+    "name": "名前",
+    "email": "メールアドレス",
+    "pTitle": "プロジェクトのタイトル",
+    "pDes": "プロジェクトの説明"
   }
 }

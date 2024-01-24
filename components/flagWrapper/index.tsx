@@ -11,22 +11,22 @@ const FlagComponent = ({ pageName }: { pageName: string | null }) => {
     <>
       <ul>
         <li>
-          <Link href={pageName ? `/jp/${pageName}` : "/jp"} locale={false}>
+          <Link href={pageName ? `/jp/${pageName}` : "/jp"} locale={"jp"}>
             <img src={japanese.src} alt="" />
           </Link>
         </li>
         <li>
-          <Link href={pageName ? `/en/${pageName}` : "/en"} locale={false}>
+          <Link href={pageName ? `/en/${pageName}` : "/en"} locale={"en"}>
             <img src={english.src} alt="" />
           </Link>
         </li>
         <li>
-          <Link href={pageName ? `/ch/${pageName}` : "/ch"} locale={false}>
+          <Link href={pageName ? `/ch/${pageName}` : "/ch"} locale="ch">
             <img src={chinese.src} alt="" />
           </Link>
         </li>
         <li>
-          <Link href={pageName ? `/ko/${pageName}` : "/ko"} locale={false}>
+          <Link href={pageName ? `/ko/${pageName}` : "/ko"} locale={"ko"}>
             <img src={korean.src} alt="" />
           </Link>
         </li>

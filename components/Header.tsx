@@ -118,21 +118,25 @@ const Header = ({ dictionary }: { dictionary: any }) => {
 
               <div className="menu-right-text">
                 <div>
-                  <p className="menu-text-title">E-mail</p>
-                  <div className="menu-text">hello@yourwebsite.com</div>
-                </div>
-                <div>
-                  <p className="menu-text-title">Phone</p>
-                  <div className="menu-text">+988 345 783 174</div>
-                </div>
-                <div>
-                  <p className="menu-text-title">Location</p>
+                  <p className="menu-text-title">
+                    {dictionary["shared"].EMAIL}
+                  </p>
                   <div className="menu-text">
-                    2819 Young Road, Massachusetts, United States
+                    {dictionary["shared"].aplashEmail}
                   </div>
                 </div>
                 <div>
-                  <p className="menu-text-title">Language</p>
+                  <p className="menu-text-title">
+                    {dictionary["shared"].Address}
+                  </p>
+                  <div className="menu-text">
+                    {dictionary["shared"].address}
+                  </div>
+                </div>
+                <div>
+                  <p className="menu-text-title">
+                    {dictionary["shared"].Language}
+                  </p>
                   <div className="flag-wrapper">
                     <FlagComponent pageName={null} />
                   </div>
