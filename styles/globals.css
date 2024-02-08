@@ -20,7 +20,7 @@ version 1.1
     2. Global CSS
 ====================================== */
 .text-danger {
-  color : red
+  color: red;
 }
 body.wait-preloader {
   overflow: hidden;
@@ -1059,7 +1059,7 @@ span.menu-num {
   display: block;
 }
 .file-upload-label :hover {
-cursor: pointer;
+  cursor: pointer;
 }
 
 .file-upload-input {
@@ -1658,14 +1658,17 @@ li.timeline-event:hover .timeline-event-date {
   opacity: 1;
 }
 
+.loader-holder {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ===================================
     10. Footer CSS
 ====================================== */
-
-footer {
-  width: calc(100% - 165px);
-  margin-left: 165px !important;
-}
 
 .footer-content {
   color: #6f6f6f;
