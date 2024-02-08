@@ -19,8 +19,8 @@
     "aboutDetails2": "新鲜，创新的想法为趋势，宣传",
     "aboutDetails3": "同样的想法，不是为创新",
     "aboutDetails4": "特殊、独特的设计可为消费者带来强烈印象。",
-    "aboutDetails5": "많은 사이트들이 사용하면서 검증된 GMB에 최소한의 Depth로 유저 편의적인",
-    "aboutDetails6": "간편한 인터페이스를 지원하여 소비자들의 확정적인 재방문을 유도해드립니다."
+    "aboutDetails5": "在许多网站中广泛使用并经过验证的GMB以最小的深度支持用户友好的",
+    "aboutDetails6": "简便的界面，促使消费者确定性地再次访问。"
   },
   "index": {
     "brand1": "Brand Identity",
@@ -39,7 +39,7 @@
     "remove": "删除"
   },
   "shared": {
-    "landing_title": "당신만을 위한, 아름다운 웹을 만듭니다",
+    "landing_title": "Crafting a Beautiful Website Just for You",
     "nev_Home": "Home",
     "nev_About": "About",
     "Portfolio": "Portfolio",
@@ -50,15 +50,15 @@
     "Address": "Location",
     "PHONE": "Phone",
     "LOCATION": "Location",
-    "aplashEmail": "support@aplash.dev",
-    "address": "Gangnam Daero 69 Gil 8 10F, 首尔",
+    "aplashEmail": "support@aplash.io",
+    "address": "ROOM 1006, 10/F. PO YIP BUILDING 23 HING YIP STREET KWUN TONG,KOWLOON, HONG KONG",
     "PROJECT": "Project",
     "CLIENT": "Client",
     "DATE": "Date",
     "Techs": "Techs",
     "contact_message": "简单，强烈的网站从这里开始。",
-    "Contact_text1": "텍스트1",
-    "Contact_text2": "텍스트2",
+    "Contact_text1": "我们欢迎您的喜好和需求。",
+    "Contact_text2": "您提供的需求越详细，我们就能提供更精确的咨询。",
     "process": "Process",
     "Language": "Language"
   },
