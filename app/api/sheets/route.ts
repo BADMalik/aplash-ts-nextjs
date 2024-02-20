@@ -2,6 +2,7 @@ import { google, drive_v3 } from "googleapis";
 import { NextResponse, NextRequest } from "next/server";
 import { NextApiResponse } from "next";
 import { Readable } from "stream";
+import CONFIGS from "../../configs/keys.json";
 type Base64 = string;
 export async function POST(request: NextRequest, res: NextApiResponse) {
   const formData = await request.formData();
@@ -28,12 +29,11 @@ export async function POST(request: NextRequest, res: NextApiResponse) {
     let link = null;
     const auth = new google.auth.GoogleAuth({
       credentials: {
-        client_email: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL,
-        private_key:
-          process.env.NEXT_PUBLIC_GOOGLE_SERVICE_PRIVATE_KEY?.replace(
-            /\\n/g,
-            "\n"
-          ),
+        client_email: CONFIGS.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL,
+        private_key: CONFIGS.NEXT_PUBLIC_GOOGLE_SERVICE_PRIVATE_KEY?.replace(
+          /\\n/g,
+          "\n"
+        ),
       },
       scopes: [
         "https://www.googleapis.com/auth/drive",
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest, res: NextApiResponse) {
     }
     sheetData = [...sheetData, link ? link : "N/A"];
     const response = await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.NEXT_PUBLIC_SPREADSHEET_ID,
+      spreadsheetId: CONFIGS.NEXT_PUBLIC_SPREADSHEET_ID,
       range: "A1:H1",
       valueInputOption: "USER_ENTERED",
       requestBody: {
@@ -70,7 +70,7 @@ const handleGoogleDriveAPI = async (file: File, service: any) => {
       const fileMetadata = {
         name: file.name,
         fields: "id",
-        parents: [process.env.NEXT_PUBLIC_FOLDER_ID],
+        parents: [CONFIGS.NEXT_PUBLIC_FOLDER_ID],
       } as any;
 
       const bytes = await file.arrayBuffer();
